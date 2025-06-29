@@ -39,9 +39,9 @@ export const chatDefaultOptions: ChatComponentOptions = {
   apiUrl: '',
   enablePromptSuggestions: true,
   promptSuggestions: [
-    'How to search and book rentals?',
-    'What is the refund policy?',
-    'How to contact a representative?',
+    'When do the 2025 tax changes take effect?',
+    'What happens to existing loan agreements after repeal?',
+    'When must permit renewal applications be submitted?',
   ],
   messages: [],
   strings: {
@@ -50,7 +50,7 @@ export const chatDefaultOptions: ChatComponentOptions = {
     followUpQuestionsTitle: 'Follow-up questions:',
     chatInputPlaceholder: 'Ask me anything...',
     chatInputButtonLabel: 'Send question',
-    assistant: 'Support Assistant',
+    assistant: 'Assistant',
     user: 'You',
     errorMessage: 'We are currently experiencing an issue.',
     newChatButton: 'New chat',
@@ -398,9 +398,9 @@ export class ChatComponent extends LitElement {
       --bot-message-bg: var(--azc-bot-message-bg, var(--card-bg));
       --citation-bg: var(--azc-citation-bg, var(--primary));
       --citation-bg-hover: var(--azc-citation-bg, color-mix(in srgb, var(--primary), #000 10%));
-      --new-chat-button-color: var(--azc-button-color, var(--text-invert-color));
-      --new-chat-button-bg: var(--azc-new-chat-button-bg, var(--primary));
-      --new-chat-button-bg-hover: var(--azc-new-chat-button-bg, color-mix(in srgb, var(--primary), #000 10%));
+      --new-chat-button-color: #ffffff;
+      --new-chat-button-bg: #0f5dea;
+      --new-chat-button-bg-hover: rgb(255, 255, 255);
       --chat-input-color: var(--azc-chat-input-color, var(--text-color));
       --chat-input-border: var(--azc-chat-input-border, none);
       --chat-input-bg: var(--azc-chat-input-bg, var(--card-bg));
@@ -423,6 +423,7 @@ export class ChatComponent extends LitElement {
     }
     button {
       font-size: 1rem;
+      font-family: 'Tinos', serif;
       border-radius: calc(var(--border-radius) / 2);
       outline: var(--focus-outline) transparent;
       transition: outline 0.3s ease;
@@ -437,16 +438,11 @@ export class ChatComponent extends LitElement {
       container-type: inline-size;
       position: relative;
       background: var(--bg);
-      font-family:
-        'Segoe UI',
-        -apple-system,
-        BlinkMacSystemFont,
-        Roboto,
-        'Helvetica Neue',
-        sans-serif;
+      font-family: 'Tinos', serif;
     }
     .citation {
       font-size: 0.85rem;
+      font-family: 'Tinos', serif;
       color: var(--citation-color);
       background: var(--citation-bg);
       border: var(--citation-border);
@@ -460,14 +456,21 @@ export class ChatComponent extends LitElement {
     }
     .citations-title {
       font-weight: bold;
+      font-family: 'Tinos', serif;
     }
     .suggestions-container {
       text-align: center;
       padding: var(--space-xl);
+      margin-top: 25px;
+    }
+    .suggestions-container h2 {
+      font-family: 'DM Serif Text', serif;
+      font-weight: 400;
     }
     .suggestions {
       display: flex;
       gap: var(--space-md);
+      margin-top: 25px;
     }
     @container (width < 480px) {
       .suggestions {
@@ -483,6 +486,7 @@ export class ChatComponent extends LitElement {
       border: var(--suggestion-border);
       border-radius: var(--border-radius);
       box-shadow: var(--suggestion-shadow);
+      font-family: 'Tinos', serif;
 
       &:hover {
         outline: var(--focus-outline) var(--primary);
@@ -524,6 +528,7 @@ export class ChatComponent extends LitElement {
     }
     .content {
       white-space: pre-line;
+      font-family: 'Tinos', serif;
     }
     .message-role {
       position: absolute;
@@ -531,6 +536,7 @@ export class ChatComponent extends LitElement {
       bottom: -1.25em;
       color: var(--text-color);
       font-size: 0.85rem;
+      font-family: 'Tinos', serif;
       opacity: 0.6;
     }
     .questions {
@@ -555,6 +561,7 @@ export class ChatComponent extends LitElement {
       color: var(--primary);
       background: var(--card-bg);
       border: 1px solid var(--primary);
+      font-family: 'Tinos', serif;
       animation-name: fade-in-right;
       &:hover {
         background: color-mix(in srgb, var(--card-bg), var(--primary) 5%);
@@ -580,7 +587,10 @@ export class ChatComponent extends LitElement {
       flex: 0 0 auto;
       padding: var(--space-xs);
       width: 36px;
-      align-self: flex-end;
+      align-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .error {
       color: var(--error-color);
@@ -606,6 +616,7 @@ export class ChatComponent extends LitElement {
     }
     .error-message {
       flex: 1;
+      font-family: 'Tinos', serif;
     }
     .chat-input {
       position: sticky;
@@ -616,6 +627,7 @@ export class ChatComponent extends LitElement {
       box-shadow: 0 calc(-1 * var(--space-md)) var(--space-md) var(--bg);
       display: flex;
       gap: var(--space-md);
+      align-items: center;
     }
     .new-chat-button {
       flex: 0 0 auto;
@@ -626,6 +638,11 @@ export class ChatComponent extends LitElement {
       background: var(--new-chat-button-bg);
       color: var(--new-chat-button-color);
       font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0;
+      margin-left: 0;
       &:hover:not(:disabled) {
         background: var(--new-chat-button-bg-hover);
         color: var(--new-chat-button-color);
@@ -642,7 +659,7 @@ export class ChatComponent extends LitElement {
       outline: var(--focus-outline) transparent;
       transition: outline 0.3s ease;
       overflow: hidden;
-
+      align-items: center;
       &:has(.text-input:focus-visible) {
         outline: var(--focus-outline) var(--primary);
       }
@@ -656,6 +673,7 @@ export class ChatComponent extends LitElement {
       border: none;
       resize: none;
       background: none;
+      align-self: center;
       &::placeholder {
         color: var(--text-color);
         opacity: 0.4;

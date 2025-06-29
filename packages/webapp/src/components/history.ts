@@ -57,7 +57,7 @@ export class HistoryComponent extends LitElement {
   })
   options: HistoryComponentOptions = historyDefaultOptions;
 
-  @property({ type: Boolean, reflect: true }) open = isLargeScreen();
+  @property({ type: Boolean, reflect: true }) open = false;
   @property() userId = '';
   @state() protected chats: ChatSession[] = [];
   @state() protected hasError = false;
@@ -298,6 +298,7 @@ export class HistoryComponent extends LitElement {
     }
     button {
       font-size: 1rem;
+      font-family: 'Tinos', serif;
       border-radius: calc(var(--border-radius) / 2);
       outline: var(--focus-outline) transparent;
       transition: outline 0.3s ease;
@@ -309,8 +310,9 @@ export class HistoryComponent extends LitElement {
     h2 {
       margin: var(--space-md) 0 0 0;
       padding: var(--space-xs) var(--space-md);
-      font-size: 0.9rem;
+      font-size: 1.3rem;
       font-weight: 600;
+      font-family: 'Tinos', serif;
     }
     .buttons {
       display: flex;
@@ -325,19 +327,14 @@ export class HistoryComponent extends LitElement {
       width: var(--panel-width);
       height: 100%;
       background: var(--panel-bg);
-      font-family:
-        'Segoe UI',
-        -apple-system,
-        BlinkMacSystemFont,
-        Roboto,
-        'Helvetica Neue',
-        sans-serif;
+      font-family: 'Tinos', serif;
       overflow: auto;
     }
     .chats {
       margin: 0;
       padding: 0;
       font-size: 0.9rem;
+      font-family: 'Tinos', serif;
     }
     .chat-title {
       text-overflow: ellipsis;
@@ -354,6 +351,7 @@ export class HistoryComponent extends LitElement {
       color: var(--text-color);
       text-decoration: none;
       background: var(--chat-entry-bg);
+      font-family: 'Tinos', serif;
 
       & .icon-button {
         flex: 0 0 auto;
@@ -372,6 +370,7 @@ export class HistoryComponent extends LitElement {
     }
     .message {
       padding: var(--space-xs) var(--space-md);
+      font-family: 'Tinos', serif;
     }
     .error {
       color: var(--error-color);
