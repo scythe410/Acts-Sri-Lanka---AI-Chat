@@ -1,3 +1,14 @@
-# Data disclaimer
+# Data Sources
 
-The documents used in this sample contain information generated using a language model (Azure OpenAI Service). The information contained in these documents is only for demonstration purposes and does not reflect the opinions or beliefs of Microsoft. Microsoft makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the information contained in this document. All rights reserved to Microsoft.
+The documents in this folder are official legal acts and amendments from the Government of Sri Lanka. These are public documents that have been made available for public access and reference.
+
+## Documents Included
+
+- **Appropriation Act** - Government budget and financial appropriations
+- **Code of Criminal Procedure (Amendment)** - Updates to criminal procedure laws
+- **Foreign Loans (Repeal)** - Legislation regarding foreign loan regulations
+- **Inland Revenue (Amendment)** - Updates to tax and revenue laws
+- **Local Authorities Elections (Special Provisions)** - Electoral regulations for local authorities
+- **National Transport Commission (Amendment)** - Updates to transport commission regulations
+
+These documents are used by the AI assistant to provide accurate (as possible), document-grounded responses to questions about Sri Lankan law and regulations.
