@@ -1,5 +1,8 @@
 # Acts of Sri Lanka - Assistant
 
+![demo_image](https://github.com/user-attachments/assets/59aa34c3-0b23-42a6-9742-bff46ea9e055)
+
+
 A serverless AI chat application that answers questions about Sri Lankan legal acts and related documents using Retrieval-Augmented Generation (RAG) with LangChain.js and Azure.
 
 Demo: [live app 😊](https://lively-meadow-0b6650b0f.1.azurestaticapps.net/).
