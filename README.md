@@ -2,6 +2,8 @@
 
 A serverless AI chat application that answers questions about Sri Lankan legal acts and related documents using Retrieval-Augmented Generation (RAG) with LangChain.js and Azure.
 
+Demo: [live app 😊](https://lively-meadow-0b6650b0f.1.azurestaticapps.net/).
+
 ## Features
 
 - **Modern Chat UI** built with Lit and hosted on Azure Static Web Apps
@@ -46,4 +48,4 @@ MIT
 
 ---
 
-For more, see the [live app](https://lively-meadow-0b6650b0f.1.azurestaticapps.net/).
+_Built with ❤️ using Azure AI, LangChain.js, and a commitment to legal accessibility_
